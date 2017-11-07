@@ -5,6 +5,7 @@ const nunjucks = require('nunjucks');
 
 app.use(volleyball);
 
+//install nunjucks and set it up as the temmplate engine:
 app.set('view engine', 'html'); // have res.render work with html files
 app.engine('html', nunjucks.render); // when giving html files to res.render, tell it to use nunjucks
 nunjucks.configure('views', {noCache: true}); // point nunjucks to the proper directory for templates
@@ -14,9 +15,18 @@ nunjucks.render('index.html', function(err, output ){
     console.log(output);
 });
 
+//collin review:
+//not sure what the point of this is:
+// app.use((req, res, next) => {
+//     res.on('finish',() => {
+//         console.log(`${req.method} ${req.path} ${res.statusCode}`)
+//     })
+// })
+
 app.use(express.static('public'))
 // express.static should come before routes bc we only want static files to be served statically
 // put exceptions first in general
+// express.static sends file to the res for us
 
 // SEND FILE method needs absolute path to work:
 // app.get('/stylesheets', function (req, res) {
@@ -34,7 +44,7 @@ app.listen(3000, function(){
 });
 
 
-
+//Practice stuff:
 // app.use('/',function(req, res, next){
 //     console.log('GET / ' + res.statusCode);
 //     next();
