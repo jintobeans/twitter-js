@@ -1,10 +1,13 @@
 const _ = require('lodash');
 
-var data = [];
+var data = [{name: 'Ashi Lopez', content: 'i am ashi #yah', id: 342},
+{name: 'John Smith', content: "Poca's my dream gurl", id: 300}, {name: 'Pocahontas63', content: 'Im an independent woman #fuJohn', id: 311}];
 
+var i = 0;
 
 function add (name, content) {
-    data.push({ name: name, content: content });
+    data.push({ name: name, content: content, id: i});
+    i++;
   }
   
   function list () {

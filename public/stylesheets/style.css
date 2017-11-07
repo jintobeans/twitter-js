@@ -57,3 +57,18 @@ code {
 .content .by {
   font-weight: bold;
 }
+ul {
+    list-style-type: none;
+    color: black;
+}
+#name {
+    color: #0084B4;
+    font-weight: bold;
+}
+#profilepic {
+    border-radius: 4px;
+    padding: 5px;
+    width: 60px;
+    height: 60px;
+    display: inline;
+}
